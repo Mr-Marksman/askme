@@ -1,0 +1,16 @@
+<h2 class="title-lg">Join and ask!</h2>
+
+<div class="mt">
+  <%= form_with model: @user do |form| %>
+    <p class="mt-lg center"><%= form.label :name, "Your name", class: "label" %></p>
+    <p class="mt-sm center"><%= form.text_field :name, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.label :nickname, "Your nickname", class: "label" %></p>
+    <p class="mt-sm center"><%= form.text_field :nickname, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.label :email, class: "label" %></p>
+    <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.submit "Register", class: "button" %></p>
+  <% end %>
+</div>

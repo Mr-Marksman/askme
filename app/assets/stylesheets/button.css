@@ -1,0 +1,21 @@
+.button {
+  display: inline-grid;
+  padding: 6px 10px 6px;
+  background: #2E9CCA;
+  border: 2px solid #25274D;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.button.lf {
+  float: left;
+}
+
+.button:hover {
+  opacity: 0.9;
+  padding: 8px 10px 4px;
+  box-shadow: inset 3px 3px 10px black;
+}
