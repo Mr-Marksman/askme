@@ -1,0 +1,31 @@
+.form_text {
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  min-width: 250px;
+  display: inline-block;
+}
+
+.form_id {
+  padding: 3px;
+  width: 20%;
+  min-width: 250px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.form_register {
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 50%;
+  min-width: 250px;
+  display: inline-block;
+}
+
+.form_id:focus, .form_text:focus, .form_register:focus {
+  box-shadow: inset 3px 3px 10px #bababa;
+  background: #f7f7f7;
+}

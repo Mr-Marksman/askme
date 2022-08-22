@@ -1,0 +1,25 @@
+body {
+  font-family: "Trebuchet MS", sans-serif;
+
+}
+
+.title-lg {
+  text-align: center;
+  font-size: 225%;
+  font-weight: 700;
+  color: #3bbfc3;
+}
+
+.title-md, .title {
+  font-size: 150%;
+  color: #3bbfc3;
+}
+
+.title-sm {
+  font-size: 125%;
+  color: #3bbfc3;
+}
+
+.text-sm {
+  font-size: 80%;
+}
