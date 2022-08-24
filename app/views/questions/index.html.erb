@@ -1,11 +1,7 @@
 <h2 class="title-lg mb-lg">Questions</h2>
 
 <% @questions.each do |question| %>
-  <% if question.hidden? %>
-    <%= render "hidden_question", question: question %>
-  <% else %>
-    <%= render "unhidden_question", question: question %>
-  <% end %>
+  <%= render "a_question", question: question %>
 <% end %>
 
 <p class="mt-sm"><%= link_to "Create new question", new_question_path, class: "button lf" %></p>

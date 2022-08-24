@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  put 'questions/:id/hide', to: "questions#hide"
-  resources :questions
+  
+  resources :questions do
+    put :hidden, on: :member, to: "questions#hide"
+  end
+  resource :session, only: %i[create, new]
   resources :users, only: %i[create new]
 end

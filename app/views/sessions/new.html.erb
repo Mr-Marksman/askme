@@ -1,0 +1,13 @@
+<h1 class="title-lg mb-lg">Log in</h1>
+
+<div class="mt">
+  <%= form_with scope: :session, url: new_session_path do |form| %>
+    <p class="mt-lg center"><%= form.label :email, "Your email", class: "label" %></p>
+    <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.label :password, "Your password", class: "label" %></p>
+    <p class="mt-sm center"><%= form.password_field :password, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.submit "Log in", class: "button" %></p>
+  <% end %>
+</div>
