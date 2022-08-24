@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   
-  before_action :set_question, only: [:update, :destroy, :show, :edit, :hide, :hidden?]
+  before_action :set_question, only: [:update, :destroy, :show, :edit, :hide]
 
   def create
     question = Question.create(question_params)
