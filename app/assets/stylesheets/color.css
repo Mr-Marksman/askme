@@ -1,0 +1,25 @@
+.red {
+  background: #fc7c7c;
+  border: 2px solid darkred;
+  color: white;
+}
+
+.blue {
+  background: lightblue;
+  border: 2px solid darkblue;
+}
+
+.yellow {
+  background: lightyellow;
+  border: 2px solid yellow;
+}
+
+.green {
+  background: lightgreen;
+  border: 2px solid darkgreen;
+}
+
+.grey {
+  background: lightgrey;
+  border: 2px solid darkgrey;
+}

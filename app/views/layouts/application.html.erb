@@ -11,7 +11,23 @@
   </head>
 
   <body>
+    <% if flash[:notice].present? %>
+      <p class="success message"><%= flash[:notice] %></p>
+    <% elsif flash[:alert].present? %>
+      <p class="error message"><%= flash[:alert] %></p>
+    <% end %>
     <div class="wrapper">
+      <div class="navbar grey">
+        <p><%= link_to "Askme", questions_path, class: "link title-sm" %></p>
+        <div>
+          <% if current_user.present? %>
+              <p><%= content_tag "span", "@#{current_user.nickname}", class: "mr lf" %><%= button_to "Log out", session_path, method: :delete, class: "button red mr" %></p>
+          <% else %>
+            <p><%= link_to "Register", new_user_path, class: "button green mr-sm" %>
+            <%= link_to "Log in", new_session_path, class: "link" %></p>
+          <% end %>
+        </div>
+      </div>  
       <%= yield %>
     </div>
   </body>

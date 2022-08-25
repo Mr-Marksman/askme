@@ -1,7 +1,7 @@
 <h1 class="title-lg mb-lg">Log in</h1>
 
 <div class="mt">
-  <%= form_with scope: :session, url: new_session_path do |form| %>
+  <%= form_with scope: :session, url: session_path,data: {turbo: false} do |form| %>
     <p class="mt-lg center"><%= form.label :email, "Your email", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
 
