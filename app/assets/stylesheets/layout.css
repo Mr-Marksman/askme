@@ -85,3 +85,19 @@ body {
 .field_with_errors input {
   background: #fc7c7c;
 }
+
+.select-field select {
+  background: lightblue;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.select-field select option {
+  font-size: 16px;
+}
+
+.flexbox-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

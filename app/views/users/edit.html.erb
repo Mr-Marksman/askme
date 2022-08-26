@@ -10,6 +10,12 @@
 
 <div class="mt">
   <%= form_with model: @user, data: {turbo: false} do |form| %>
+    <p class="mt-lg center"><%= form.label :color, "Header color", class: "label" %></p>
+    <p class="mt-sm center select-field">
+      <%= form.select :color, ["red", "blue", "yellow", "green", "grey"], 
+        selected: :color %>
+    </p>
+
     <p class="mt-lg center"><%= form.label :name, "Your name", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :name, class: "form_register" %></p>
 
@@ -27,10 +33,9 @@
     <p class="mt-lg center">
       <%= form.submit "Edit", class: "button" %>
       <%= link_to "Back", :back, class: "button" %>
-    
-      <% end %>
+    </p>
+  <% end %>
 
-    <%= button_to "Delete user", user_path(@user), method: :delete, class: "button red",
-    form: {data: {turbo_confirm: "Are you sure that you want to delete you profile>"}} %>
-  </p>
+  <%= button_to "Delete user", user_path(@user), method: :delete, class: "button centered red mt-sm",
+  form: {data: {turbo_confirm: "Are you sure that you want to delete you profile>"}} %>
 </div>
