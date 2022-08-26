@@ -27,7 +27,10 @@
         <p><%= link_to "Askme", questions_path, class: "link title-sm" %></p>
         <div>
           <% if current_user.present? %>
-              <p><%= content_tag "span", display_nickname(current_user), class: "mr lf" %><%= button_to "Log out", session_path, method: :delete, class: "button red mr" %></p>
+              <p>
+                <%= link_to display_nickname(current_user), "users/#{current_user.id}/edit",  class: "mr lf link" %>
+                <%= button_to "Log out", session_path, method: :delete, class: "button red mr" %>
+                </p>
           <% else %>
             <p><%= link_to "Register", new_user_path, class: "button green mr-sm" %>
             <%= link_to "Log in", new_session_path, class: "link" %></p>
