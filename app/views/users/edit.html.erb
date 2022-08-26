@@ -1,4 +1,4 @@
-<h2 class="title-lg">Join and ask!</h2>
+<h2 class="title-lg">User editing</h2>
 
 <% if @user.errors.any? %>
   <div>
@@ -16,8 +16,7 @@
     <p class="mt-lg center"><%= form.label :nickname, "Your nickname", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :nickname, class: "form_register" %></p>
 
-    <p class="mt-lg center"><%= form.label :email, "Email", class: "label" %></p>
-    <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
+    <p class="mt-lg center"><span class="mt-lg center label grey">If you won't change password - leave the fields below empty</span></p>
 
     <p class="mt-lg center"><%= form.label :password, class: "label" %></p>
     <p class="mt-sm center"><%= form.password_field :password, class: "form_register" %></p>
@@ -25,6 +24,13 @@
     <p class="mt-lg center"><%= form.label :password_confirmation, class: "label" %></p>
     <p class="mt-sm center"><%= form.password_field :password_confirmation, class: "form_register" %></p>
 
-    <p class="mt-lg center"><%= form.submit "Register", class: "button" %></p>
-  <% end %>
+    <p class="mt-lg center">
+      <%= form.submit "Edit", class: "button" %>
+      <%= link_to "Back", :back, class: "button" %>
+    
+      <% end %>
+
+    <%= button_to "Delete user", user_path(@user), method: :delete, class: "button red",
+    form: {data: {turbo_confirm: "Are you sure that you want to delete you profile>"}} %>
+  </p>
 </div>

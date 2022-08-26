@@ -17,3 +17,14 @@
   background: red;
   border: 3px solid darkred;
 }
+
+.register_error_message {
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
+  padding: 8px;
+  text-align: center;
+  background: #fc7c7c;
+  border: 3px solid red;
+  border-radius: 5px;
+}
