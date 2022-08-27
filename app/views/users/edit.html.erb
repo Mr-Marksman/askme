@@ -12,8 +12,7 @@
   <%= form_with model: @user, data: {turbo: false} do |form| %>
     <p class="mt-lg center"><%= form.label :color, "Header color", class: "label" %></p>
     <p class="mt-sm center select-field">
-      <%= form.select :color, ["red", "blue", "yellow", "green", "grey"], 
-        selected: @user.color %>
+      <input name="user[color]" type="color" id="color">
     </p>
 
     <p class="mt-lg center"><%= form.label :name, "Your name", class: "label" %></p>

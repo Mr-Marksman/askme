@@ -6,7 +6,6 @@ class User < ApplicationRecord
     uniqueness: true, 
     format: { 
       with: /\A^[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+$\z/i, 
-      message: ": Please, put Email in right format: example.email@example.com" 
     }
 
   validates :nickname, 
@@ -14,13 +13,12 @@ class User < ApplicationRecord
     uniqueness: true,
     length: { maximum: 40, message: ": length must be less than 40 symbols" },
     format: { 
-      with: /\A[[:alnum:]_]+\z/i, 
-      message: ': Put only latin letters, numbers and "_"' 
+      with: /\A[[a-z0-9]_]+\z/i, 
     }
 
   validates :name, presence: true
 
-  before_save :downcase_nickname
+  before_validation :downcase_nickname
 
   def downcase_nickname
     nickname.downcase!
