@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  validates :color, presence: true
+
   before_validation :downcase_nickname
 
   def downcase_nickname
