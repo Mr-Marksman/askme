@@ -4,6 +4,6 @@ module UsersHelper
   end
 
   def splited_question_body(question_body)
-    question_body.gsub("\n", "<br>").html_safe
+    question_body.split("\n")
   end
 end

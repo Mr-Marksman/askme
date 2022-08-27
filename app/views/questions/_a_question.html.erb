@@ -1,4 +1,4 @@
-<div class="a_question 
+<div class="
   <% if question.hidden? %> 
     <%= "hidden" %>
   <% end %> 
@@ -6,7 +6,9 @@
 
   <p class="mb-sm"> <%= link_to "Question #{question.id}", question_path(question), { class: "link", tabindex: "1" } %>:
     <% if question.body.length <= 80 %>
-      <%= question.body %>
+      <% splited_question_body(question.body).each do |line| %>
+        <%= line %><br>
+      <% end %>
     <% else %>
       <%= "#{question.body[0..80]}..."%>
     <% end %>
