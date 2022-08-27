@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :nickname, 
     presence: true,
     uniqueness: true,
-    length: { maximum: 40, message: ": length must be less than 40 symbols" },
+    length: { maximum: 40},
     format: { 
       with: /\A[[a-z0-9]_]+\z/i, 
     }
