@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
   has_secure_password
 
   has_many :questions, dependent: :delete_all
@@ -27,4 +28,6 @@ class User < ApplicationRecord
   def downcase_nickname
     nickname.downcase!
   end
+=======
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
 end

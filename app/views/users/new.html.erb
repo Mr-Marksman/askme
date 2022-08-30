@@ -1,5 +1,6 @@
 <h2 class="title-lg">Join and ask!</h2>
 
+<<<<<<< HEAD
 <% if @user.errors.any? %>
   <div>
     <% @user.errors.full_messages.each do |message| %>
@@ -10,12 +11,17 @@
 
 <div class="mt">
   <%= form_with model: @user, data: {turbo: false} do |form| %>
+=======
+<div class="mt">
+  <%= form_with model: @user do |form| %>
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
     <p class="mt-lg center"><%= form.label :name, "Your name", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :name, class: "form_register" %></p>
 
     <p class="mt-lg center"><%= form.label :nickname, "Your nickname", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :nickname, class: "form_register" %></p>
 
+<<<<<<< HEAD
     <p class="mt-lg center"><%= form.label :email, "Email", class: "label" %></p>
     <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
 
@@ -28,3 +34,11 @@
     <p class="mt-lg center"><%= form.submit "Register", class: "button" %></p>
   <% end %>
 </div>
+=======
+    <p class="mt-lg center"><%= form.label :email, class: "label" %></p>
+    <p class="mt-sm center"><%= form.text_field :email, class: "form_register" %></p>
+
+    <p class="mt-lg center"><%= form.submit "Register", class: "button" %></p>
+  <% end %>
+</div>
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2

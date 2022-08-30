@@ -68,7 +68,10 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+<<<<<<< HEAD
     bcrypt (3.1.18)
+=======
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -112,9 +115,14 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+<<<<<<< HEAD
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.5.6)
+=======
+    minitest (5.16.3)
+    msgpack (1.5.5)
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
     net-imap (0.2.3)
       digest
       net-protocol
@@ -130,6 +138,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -138,6 +147,12 @@ GEM
     pg (1.4.3)
     public_suffix (5.0.0)
     puma (5.6.5)
+=======
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
+    public_suffix (5.0.0)
+    puma (5.6.4)
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
@@ -217,17 +232,26 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+<<<<<<< HEAD
   ruby
   x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+=======
+  x86_64-linux
+
+DEPENDENCIES
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
   bootsnap
   capybara
   debug
   importmap-rails
   jbuilder
+<<<<<<< HEAD
   pg
+=======
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver

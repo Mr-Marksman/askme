@@ -1,5 +1,17 @@
 <h2 class="title-lg mb-lg">Questions</h2>
 
+<<<<<<< HEAD
 <% @questions.order(created_at: :asc).each do |question| %>
   <%= render "a_question", question: question %>
 <% end %>
+=======
+<% @questions.each do |question| %>
+  <% if question.hidden? %>
+    <%= render "hidden_question", question: question %>
+  <% else %>
+    <%= render "unhidden_question", question: question %>
+  <% end %>
+<% end %>
+
+<p class="mt-sm"><%= link_to "Create new question", new_question_path, class: "button lf" %></p>
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2

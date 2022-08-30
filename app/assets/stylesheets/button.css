@@ -1,5 +1,8 @@
 .button {
+<<<<<<< HEAD
   box-shadow: 1px 1px 2px black;
+=======
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
   display: inline-grid;
   padding: 6px 10px 6px;
   background: #2E9CCA;
@@ -19,6 +22,7 @@
   opacity: 0.9;
   padding: 8px 10px 4px;
   box-shadow: inset 3px 3px 10px black;
+<<<<<<< HEAD
 }
 
 .centered {
@@ -26,3 +30,6 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+=======
+}
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2

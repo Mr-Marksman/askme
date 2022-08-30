@@ -1,14 +1,19 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
 
   before_action :set_user, only: %i[edit show update destroy]
   before_action :authorize_user, only: %i[edit update destroy]
 
   def new
     session[:current_time] = Time.now
+=======
+  def new
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
     @user = User.new
   end
 
   def create
+<<<<<<< HEAD
     @user = User.new(user_params)
 
     if @user.save
@@ -63,5 +68,12 @@ class UsersController < ApplicationController
 
   def user_params
     user_params = params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :color)
+=======
+    user_params = params.require(:user).permit(:name, :nickname, :email)
+
+    User.create(user_params)
+
+    redirect_to questions_url, notice: "User with nickname #{user_params[:nickname]} successfully created!"
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
   end
 end

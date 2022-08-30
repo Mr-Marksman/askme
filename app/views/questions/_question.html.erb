@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container mb-sm">
   <p>
     <% splited_question_body(question.body).each do |line| %>
@@ -23,3 +24,30 @@
 
   <%= link_to "All questions", questions_path, class: "button mr" %>
 </div>
+=======
+<% if question.hidden %>
+  <div class="container mb-sm">
+    <p><%= question.body %></p>
+    <p class="mt"><%= l(question.created_at, format: :short) %></p>
+  </div>
+  <p class="container id mb-sm">user_id: <b><%= question.user_id %></b></p>
+
+  <p><div class="mt">
+    <%= button_to "Delete question", question_path(question), class: "button lf mr", method: :delete,
+    title: "Delete question", form: {data: {turbo_confirm: "Do you want delete the question?"}} %>
+  </div>
+<% else %>
+  <div class="container mb-sm">
+    <p><%= question.body %></p>
+    <p class="mt"><%= l(question.created_at, format: :short) %></p>
+  </div>
+  <p class="container id mb-sm">user_id: <b><%= question.user_id %></b></p>
+
+  <p><div class="mt">
+    <%= button_to "Delete question", question_path(question), class: "button lf mr", method: :delete,
+    title: "Delete question", form: {data: {turbo_confirm: "Do you want delete the question?"}} %>
+    <%= button_to "Hide question", "/questions/#{question.id}/hide", class: "button lf mr", method: :put,
+    title: "Hide question" %>
+  </div>
+<% end %>
+>>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
