@@ -20,11 +20,17 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  validates :color, presence: true
+  validates :color, 
+    presence: true,
+    length: { is: 7 },
+    format: { with: /\A#[0-9a-f]+\z/i, }
+ 
 
   before_validation :downcase_nickname
 
+  private
+
   def downcase_nickname
-    nickname.downcase!
+    nickname&.downcase!
   end
 end

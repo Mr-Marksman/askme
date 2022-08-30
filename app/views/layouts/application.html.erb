@@ -18,7 +18,7 @@
       <p class="error message"><%= flash[:alert] %></p>
     <% end %>
     <div class="wrapper">
-      <div class="navbar grey" style= "<%= "background: #{current_user.color};" if current_user.present? %>">
+      <div class="navbar grey" style= " background: <%= current_user.color if current_user.present? %>;">
 
         <p><%= link_to "Askme", questions_path, class: "link title-sm" %></p>
         <div>
