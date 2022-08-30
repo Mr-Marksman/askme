@@ -62,7 +62,7 @@ body {
 }
 
 .label {
-  display: block;
+  display: inline-block;
   padding: 4px 4px;
   background: #97d2fc;
   border: 2px solid #25274D;
