@@ -7,10 +7,7 @@ body {
 .wrapper {
   display: block;
   padding: 30px;
-<<<<<<< HEAD
-=======
   max_width: 1000px;
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
   width: 90%;
   margin: 40px;
   background: #29648A;
@@ -25,11 +22,6 @@ body {
   border-top: 2px solid #2E9CCA;
   border-bottom: 2px solid #2E9CCA;
   border-radius: 5px;
-<<<<<<< HEAD
-=======
-  margin-right: -30px;
-  margin-left: -30px;
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
 }
 
 .container {
@@ -44,13 +36,10 @@ body {
   width: 30%;
 }
 
-<<<<<<< HEAD
-=======
 .a_question {
   height: 20px;
 }
 
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
 .hidden {
   opacity: 0.5;
 }
@@ -68,23 +57,18 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .right {
   text-align: right;
 }
 
 .label {
-=======
-.label {
-  isplay: block;
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
+  display: block;
   padding: 4px 4px;
   background: #97d2fc;
   border: 2px solid #25274D;
   border-radius: 5px;
   color: black;
   font-weight: bold;
-<<<<<<< HEAD
 }
 
 .navbar {
@@ -128,6 +112,3 @@ body {
 .nickname.link:hover {
   color: yellow;
 }
-=======
-}
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2

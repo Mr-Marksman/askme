@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
   helper_method :current_user
 
   private
@@ -11,6 +10,4 @@ class ApplicationController < ActionController::Base
   def redirect_with_alert
     redirect_to questions_path, alert: "Hey, you can't be here!"
   end
-=======
->>>>>>> 4ac2bd659353386c0a3544f6164712a829b188b2
 end
