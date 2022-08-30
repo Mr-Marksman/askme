@@ -112,3 +112,15 @@ body {
 .nickname.link:hover {
   color: yellow;
 }
+
+.flexbox-between {
+  display: inline-flex;
+}
+
+.question_link {
+  float: left;
+}
+
+.question_text {
+  display: inline-block;
+}

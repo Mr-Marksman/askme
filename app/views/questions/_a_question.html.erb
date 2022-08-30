@@ -2,8 +2,15 @@
   <%= "hidden" if question.hidden? %>
   <%= "user_question" if current_user == question.user && !current_user.nil? %>">
 
-  <p class="mb-sm"> 
-    <%= link_to "Question #{question.id}", question_path(question), class: "link", tabindex: "1" %>:
-    <%= question.body.truncate(80, separator: ' ') %>
+  <p class="mb-sm flexbox-between"> 
+    <div class="question_link">
+      <%= link_to "Question #{question.id}", question_path(question), class: "link", tabindex: "1" %>:
+    </div>
+    
+    <div class="question_text">
+      <% question.body.truncate(80, separator: ' ').split("\n").each do |line| %>
+        <%= line %><br>
+      <% end %>
+    </div>
   </p>
 </div>
