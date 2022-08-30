@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :questions, dependent: :delete_all
+
   validates :email, 
     presence: true, 
     uniqueness: true, 
@@ -11,7 +13,7 @@ class User < ApplicationRecord
   validates :nickname, 
     presence: true,
     uniqueness: true,
-    length: { maximum: 40},
+    length: { maximum: 20},
     format: { 
       with: /\A[[a-z0-9]_]+\z/i, 
     }

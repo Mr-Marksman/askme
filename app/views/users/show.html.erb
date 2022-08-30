@@ -1,0 +1,24 @@
+<h2 class="title-lg mb-lg">Questions for <%= display_nickname(@user) %></h2>
+
+<div class="grey user_header mb-lg" style= "<%= "background: #{@user.color};"%>">
+  <div class="user_container">
+    <p><p class="user_name title-sm mt-sm"><%= @user.name %></p></p>
+    <p><p class="user_nickname title-sm mt-sm"><%= display_nickname(@user) %></p></p>
+    
+    <p><%= link_to "Ask #{display_nickname(@user)}", new_question_path(user_id: @user.id), class: "button yellow mt" %></p>
+    
+    <% if current_user == @user %>
+      <p><%= link_to "Edit your profile", edit_user_path(@user), class: "button mt" %></p>
+    <% end %>
+  </div>
+  
+  <div class="user_photo">
+    User photo will be here in the future
+  </div>
+</div>
+
+<%= render "questions/form", question: @question %>
+
+<% @user.questions.order(created_at: :asc).each do |question| %>
+  <%= render "questions/a_question", question: question %>
+<% end %>

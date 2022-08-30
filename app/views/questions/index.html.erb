@@ -1,7 +1,5 @@
 <h2 class="title-lg mb-lg">Questions</h2>
 
-<% @questions.sort { |question1, question2| question1[:id] <=> question2[:id] }.each do |question| %>
+<% @questions.order(created_at: :asc).each do |question| %>
   <%= render "a_question", question: question %>
 <% end %>
-
-<p class="mt-sm"><%= link_to "Create new question", new_question_path, class: "button lf" %></p>

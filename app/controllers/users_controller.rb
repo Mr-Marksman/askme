@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :set_user, only: %i[edit show update destroy]
+  before_action :authorize_user, only: %i[edit update destroy]
+
   def new
     session[:current_time] = Time.now
     @user = User.new
@@ -18,13 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit 
-    @user=User.find(params[:id])
+  def edit
   end
 
   def update
-    @user=User.find(params[:id])
-
     if @user.update(user_params)
       session[:user_id] = @user.id
 
@@ -37,8 +38,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-
     nickname = @user.nickname
 
     @user.destroy
@@ -47,7 +46,20 @@ class UsersController < ApplicationController
     redirect_to questions_path, notice: "User with nickname #{nickname} has deleted"
   end
 
+  def show
+    @question = @user.questions
+    @question = Question.new(user: @user)
+  end
+
   private
+
+  def authorize_user
+    redirect_with_alert if current_user != @user || current_user == nil
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     user_params = params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :color)

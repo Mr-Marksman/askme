@@ -1,20 +1,25 @@
 <div class="container mb-sm">
   <p>
     <% splited_question_body(question.body).each do |line| %>
-      <%= line %><br>
+      <%= line %>
     <% end %>
   </p>
   <p class="mt"><%= l(question.created_at, format: :short) %></p>
 </div>
 <p class="container id mb-sm">user_id: <b><%= question.user_id %></b></p>
 
-<p><div class="mt">
-  <%= button_to "Delete question", question_path(question), class: "button lf mr", method: :delete,
-  title: "Delete question", form: {data: {turbo_confirm: "Do you want delete the question?"}} %>
+<div class="mt">
+  <% if current_user == question.user && !current_user.nil? %>
+    <%= button_to "Delete question", question_path(question), class: "button lf mr", method: :delete,
+    title: "Delete question", form: {data: {turbo_confirm: "Do you want delete the question?"}} %>
 
-  <% unless question.hidden? %>
-    <%= button_to "Hide question", hidden_question_path, class: "button lf mr", method: :put,
-    title: "Hide question" %>
+    <% unless question.hidden? %>
+      <%= button_to "Hide question", hidden_question_path, class: "button lf mr", method: :put,
+      title: "Hide question" %>
+    <% end %>
+    
+    <%= link_to "Edit question", edit_question_path(@question), class: "button mr" %>
   <% end %>
 
+  <%= link_to "All questions", questions_path, class: "button mr" %>
 </div>

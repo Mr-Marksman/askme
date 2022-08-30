@@ -97,3 +97,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.nickname {
+  color: #fff7b0;
+  text-decoration: none;
+}
+
+.nickname.link:hover {
+  color: yellow;
+}
