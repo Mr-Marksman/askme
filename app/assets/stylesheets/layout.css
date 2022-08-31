@@ -124,3 +124,12 @@ body {
 .question_text {
   display: inline-block;
 }
+
+.empty_state {
+  display: inline-block;
+  width: 40%;
+  border: 4px solid grey;
+  border-radius: 4px;
+  padding: 8px;
+  color: lightblue;
+}

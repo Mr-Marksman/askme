@@ -21,3 +21,7 @@ body {
 .text-sm {
   font-size: 80%;
 }
+
+.right-text {
+  text-align: right;
+}
