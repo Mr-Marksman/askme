@@ -8,9 +8,13 @@
     </div>
     
     <div class="question_text">
-      <% question.body.truncate(80, separator: ' ').split("\n").each do |line| %>
-        <%= line %><br>
-      <% end %>
+      <p>
+        <% if question.topic.present? %>
+          <%= question.topic.truncate(80, separator: " ") %>
+        <% else %>
+          Question without topic (old version): <%= question.body.truncate(60, separator: " ") %>
+        <% end %>
+      </p>
     </div>
   </p>
 </div>

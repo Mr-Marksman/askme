@@ -1,17 +1,30 @@
 class QuestionsController < ApplicationController
-  
   before_action :set_question, only: [:update, :destroy, :show, :edit, :hide]
 
   def create
-    @question = Question.create(question_params)
+    question_params = params.require(:question).permit(:body, :user_id, :topic, :hidden)
 
-    redirect_to user_path(@question.user), notice: "Your question has created"
+    @question = Question.new(question_params)
+
+    if @question.save
+      redirect_to user_path(@question.user), notice: "Your question has created!"
+    else
+      flash.now[:alert] = "You filled in the question form incorrectly"
+
+      render :new
+    end
   end
 
   def update
-    @question.update(question_params)
+    question_params = params.require(:question).permit(:body, :answer, :hidden)
 
-    redirect_to user_path(@question.user)
+    if @question.update(question_params)
+      redirect_to user_path(@question.user), notice: "Your question has updated!"
+    else
+      flash.now[:alert] = "You filled in the question form incorrectly"
+
+      render :edit
+    end
   end
 
   def destroy
@@ -40,10 +53,6 @@ class QuestionsController < ApplicationController
     @question.update(hidden: true)
 
     redirect_to questions_path
-  end
-
-  def question_params
-    params.require(:question).permit(:body,:user_id, :hidden)
   end
 
   private

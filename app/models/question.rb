@@ -4,4 +4,7 @@ class Question < ApplicationRecord
   
   validates :body, 
     presence: true, length: { maximum: 500 }
+
+  validates :topic, 
+    presence: true, length: { maximum: 100 }
 end

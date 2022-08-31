@@ -1,5 +1,5 @@
 <h2 class="title-lg mb-lg">Questions</h2>
 
 <% @questions.order(created_at: :asc).each do |question| %>
-  <%= render "a_question", question: question %>
+  <%= render "question_from_list", question: question %>
 <% end %>

@@ -20,5 +20,5 @@
 <%= render "questions/form", question: @question %>
 
 <% @user.questions.order(created_at: :asc).each do |question| %>
-  <%= render "questions/a_question", question: question %>
+  <%= render "questions/question_from_list", question: question %>
 <% end %>
