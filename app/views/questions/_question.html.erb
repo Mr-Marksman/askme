@@ -15,7 +15,7 @@
 
   <% if question.author.present? %>
     <p class="mt title-sm">
-      Author: <%= link_to display_nickname(current_user), user_path(current_user),  class: "link" %>
+      Author: <%= link_to display_nickname(question.author), user_path(question.author),  class: "link" %>
     </p>
   <% end %>
 
@@ -32,7 +32,9 @@
   </div>
 <% end %>
 
-<p class="container id mb-sm">user_id: <b><%= question.user_id %></b></p>
+<p class="container id mb-sm">
+  Question for: <%= link_to display_nickname(question.user), user_path(question.user),  class: "link" %>
+</p>
 
 <div class="mt">
   <% if current_user == question.user && !current_user.nil? %>
