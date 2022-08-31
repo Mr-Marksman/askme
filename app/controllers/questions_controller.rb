@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    question_params = params.require(:question).permit(:body, :answer, :hidden)
+    question_params = params.require(:question).permit(:body, :answer, :topic :hidden)
 
     if @question.update(question_params)
       redirect_to user_path(@question.user), notice: "Your question has updated!"

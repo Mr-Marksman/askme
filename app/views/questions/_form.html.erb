@@ -9,10 +9,8 @@
 <%= form_with model: question, data: {turbo: false} do |form| %>
   <%= form.hidden_field :user_id %>
 
-  <% unless question.persisted? %>
-    <p class="mt center"><%= form.label :topic, "Question topic", class: "label" %></p>
-    <p class="mt-lg"><%= form.text_area :topic, rows: 5, class: "form_text" %></p>
-  <% end %>
+  <p class="mt center"><%= form.label :topic, "Question topic", class: "label" %></p>
+  <p class="mt-lg"><%= form.text_area :topic, rows: 5, class: "form_text" %></p>
 
   <p class="center mt"><%= form.label :body, "New question text", class: "label" %></p>
   <p><%= form.text_area :body, rows: 5, class: "form_text mt-lg" %></p>
