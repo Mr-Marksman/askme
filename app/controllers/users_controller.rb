@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @question = @user.questions
+    @questions = @user.questions
     @question = Question.new(user: @user)
   end
 
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by!(nickname: params[:nickname])
   end
 
   def user_params
