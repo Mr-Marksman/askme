@@ -6,7 +6,5 @@ Rails.application.routes.draw do
   
   resource :session, only: %i[create new destroy]
   
-  scope(path_names: { show: ":nickname" }) do
-    resources :users, except: %i[index], param: :nickname
-  end 
+  resources :users, except: [:index], param: :nickname
 end
