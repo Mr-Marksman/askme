@@ -22,8 +22,7 @@ class User < ApplicationRecord
 
   validates :color, 
     presence: true,
-    length: { is: 7 },
-    format: { with: /\A#[[:xdigit:]]+\z/i, }
+    format: { with: /\A#((0|f){3}|[[:xdigit:]]{6})\z/i, }
 
   before_validation :downcase_nickname
 
