@@ -15,7 +15,7 @@ class User < ApplicationRecord
     uniqueness: true,
     length: { maximum: 20},
     format: { 
-      with: /\A[[a-z0-9]_]+\z/, 
+      with: /\A[[:word:]]+\z/, 
     }
 
   validates :name, presence: true
@@ -24,7 +24,6 @@ class User < ApplicationRecord
     presence: true,
     length: { is: 7 },
     format: { with: /\A#[[:xdigit:]]+\z/i, }
- 
 
   before_validation :downcase_nickname
 
