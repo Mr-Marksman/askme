@@ -15,7 +15,7 @@ class User < ApplicationRecord
     uniqueness: true,
     length: { maximum: 20},
     format: { 
-      with: /\A[[a-z0-9]_]+\z/i, 
+      with: /\A[[a-z0-9]_]+\z/, 
     }
 
   validates :name, presence: true
@@ -31,7 +31,7 @@ class User < ApplicationRecord
   def to_param
     nickname
   end
-  
+
   private
 
   def downcase_nickname
