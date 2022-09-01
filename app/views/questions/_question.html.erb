@@ -1,11 +1,7 @@
 <div class="container mb-sm">
   <p>
     <p class="title-sm mb-sm">
-      <% if question.topic.present? %>
-        <%= question.topic %>
-      <% else %>
-        Question without topic (old version)
-      <% end %>  
+        <%=  question.topic || "Question without topic (old version)" %>
     </p>
     
     <% splited_question_body(question.body).each do |line| %>

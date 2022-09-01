@@ -9,11 +9,8 @@
     
     <div class="question_text">
       <p>
-        <% if question.topic.present? %>
-          <%= question.topic.truncate(80, separator: " ") %>
-        <% else %>
-          Question without topic (old version): <%= question.body.truncate(60, separator: " ") %>
-        <% end %>
+          <%= question.topic&.truncate(80, separator: " ") || 
+          "Question without topic (old version): #{question.body.truncate(60, separator: " ")}" %>
       </p>
     </div>
   </p>
