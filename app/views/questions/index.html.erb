@@ -1,5 +1,19 @@
-<h2 class="title-lg mb-lg">Questions</h2>
+<h2 class="title-lg mb-lg">AskMe</h2>
 
-<% @questions.order(created_at: :asc).each do |question| %>
-  <%= render "question_from_list", question: question %>
-<% end %>
+<div class="mb-lg">
+  <h2 class="title centered label">Recently with us</h2>
+  <div class="users_box">
+    <% @users.each do |user| %>
+      <div class="users_box_user user_avatar"><%= render "users/user_avatar", user: user %></div>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <h2 class="title mb-lg mt-lg centered label">New Questions</h2>
+  <div>
+    <% @questions.each do |question| %>
+      <%= render "question_from_list", question: question %>
+    <% end %>
+  </div>
+</div>

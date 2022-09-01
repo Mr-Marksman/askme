@@ -9,6 +9,7 @@
   font-size: 14px;
   color: black;
   font-weight: bold;
+  -webkit-appearance: none;
 }
 
 .button.lf {

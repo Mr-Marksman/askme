@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     put :hidden, on: :member, to: "questions#hide"
   end
   resource :session, only: %i[create new destroy]
-  resources :users, exept: %i[index]
+  resources :users, exepr: [:index]
 end

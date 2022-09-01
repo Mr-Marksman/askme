@@ -12,9 +12,7 @@
     <% end %>
   </div>
   
-  <div class="user_photo">
-    User photo will be here in the future
-  </div>
+  <%= render "user_avatar", user: @user %>
 </div>
 
 <%= render "questions/form", question: @question %>

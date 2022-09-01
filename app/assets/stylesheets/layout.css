@@ -8,6 +8,7 @@ body {
   display: block;
   padding: 30px;
   max_width: 1000px;
+  min-width: 350px;
   width: 90%;
   margin: 40px;
   background: #29648A;
@@ -46,6 +47,11 @@ body {
 
 .link {
   color: darkred;
+}
+
+.none_dec {
+  color: black;
+  text-decoration: none;
 }
 
 .link:hover {
@@ -125,11 +131,6 @@ body {
   display: inline-block;
 }
 
-.empty_state {
-  display: inline-block;
-  width: 40%;
-  border: 4px solid grey;
-  border-radius: 4px;
-  padding: 8px;
-  color: lightblue;
+.rounded {
+  border-radius: 50%;
 }

@@ -1,0 +1,11 @@
+.users_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.users_box_user {
+  flex-basis: 120px;
+  flex-grow: 0;
+  height: 120px;
+}
