@@ -33,6 +33,6 @@
     </p>
   <% end %>
 
-  <%= button_to "Delete user", user_path(@user), method: :delete, class: "button centered red mt-sm",
+  <%= button_to "Delete user", user_path(@user.nickname), method: :delete, class: "button centered red mt-sm",
   form: {data: {turbo_confirm: "Are you sure that you want to delete you profile>"}} %>
 </div>

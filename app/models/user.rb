@@ -26,10 +26,6 @@ class User < ApplicationRecord
 
   before_validation :downcase_nickname
 
-  def to_param
-    nickname
-  end
-
   private
 
   def downcase_nickname

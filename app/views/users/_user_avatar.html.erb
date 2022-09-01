@@ -2,7 +2,7 @@
 <% color_class = "user_letter_color#{user.id % 3}" %>
 <% nickname_letter = user.nickname.first.upcase %>
 
-<a href="<%= user_path(user) %>" class="none_dec">
+<a href="<%= user_path(user.nickname) %>" class="none_dec">
   <div class="user_photo <%= background_class %> rounded">
   	  <h1 class="user_letter <%= color_class %>"><%= nickname_letter %></h1>
   </div>

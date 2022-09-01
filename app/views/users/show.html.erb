@@ -8,7 +8,7 @@
     <p><%= link_to "Ask #{display_nickname(@user)}", new_question_path(user_id: @user.id), class: "button yellow mt" %></p>
     
     <% if current_user == @user %>
-      <p><%= link_to "Edit your profile", edit_user_path(@user), class: "button mt" %></p>
+      <p><%= link_to "Edit your profile", edit_user_path(@user.nickname), class: "button mt" %></p>
     <% end %>
   </div>
   
