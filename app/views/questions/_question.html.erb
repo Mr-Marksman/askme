@@ -13,11 +13,13 @@
     <% end %>
   </p>
 
-  <% if question.author.present? %>
-    <p class="mt title-sm">
-      Author: <%= link_to display_nickname(question.author), user_path(question.author),  class: "link" %>
+    <p class="mt title-sm">Author:       
+      <% if question.author.present? %>
+        <%= link_to display_nickname(question.author), user_path(question.author),  class: "link" %>
+      <% else %>
+        anonymous
+      <% end %>
     </p>
-  <% end %>
 
   <p class="mt"><%= l(question.created_at, format: :short) %></p>
 </div>
