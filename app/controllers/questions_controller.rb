@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
     @question.author = current_user if current_user.present?
 
     if @question.save
-      redirect_to user_path(@question.user), notice: "Your question has created!"
+      redirect_to user_path(@question.user.nickname), notice: "Your question has created!"
     else
       flash.now[:alert] = "You filled in the question form incorrectly"
 
@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
     question_params = params.require(:question).permit(:body, :answer, :topic, :hidden)
 
     if @question.update(question_params)
-      redirect_to user_path(@question.user), notice: "Your question has updated!"
+      redirect_to user_path(@question.user.nickname), notice: "Your question has updated!"
     else
       flash.now[:alert] = "You filled in the question form incorrectly"
 
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
     @user = @question.user
     @question.destroy
 
-    redirect_to user_path(@user), notice: "Your question has deleted!"
+    redirect_to user_path(@user.nickname), notice: "Your question has deleted!"
   end
 
   def show

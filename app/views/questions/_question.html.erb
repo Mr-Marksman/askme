@@ -4,7 +4,7 @@
         <%=  question.topic || "Question without topic (old version)" %>
     </p>
     
-    <% splited_question_body(question.body).each do |line| %>
+    <% splited_text(question.body).each do |line| %>
       <%= line %><br>
     <% end %>
   </p>
@@ -23,7 +23,7 @@
 <% if question.answer.present? %>
   <div class="container mb-sm">
     <p><p class="title-sm mb-sm">Answer:</p>
-      <% splited_answer(question.answer).each do |line| %>
+      <% splited_text(question.answer).each do |line| %>
         <%= line %><br>
       <% end %>
     </p>

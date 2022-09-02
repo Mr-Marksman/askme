@@ -1,6 +1,6 @@
 <% if @question.errors.any? %>
   <div>
-    <% @question.errors.full_messages.each do |message| %>
+    <% question.errors.full_messages.each do |message| %>
       <p class="mt-sm register_error_message"><%= message %></p>
     <% end %>
   </div>
@@ -10,7 +10,7 @@
   <%= form.hidden_field :user_id %>
 
   <p class="mt center"><%= form.label :topic, "Question topic", class: "label" %></p>
-  <p class="mt-lg"><%= form.text_area :topic, rows: 5, class: "form_text" %></p>
+  <p class="mt-lg center"><%= form.text_area :topic, rows: 5, class: "form_topic" %></p>
 
   <p class="center mt"><%= form.label :body, "New question text", class: "label" %></p>
   <p><%= form.text_area :body, rows: 5, class: "form_text mt-lg" %></p>

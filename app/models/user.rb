@@ -15,14 +15,14 @@ class User < ApplicationRecord
     uniqueness: true,
     length: { maximum: 20},
     format: { 
-      with: /\A[[:word:]]+\z/, 
+      with: /\A[a-z0-9_]+\z/, 
     }
 
   validates :name, presence: true
 
   validates :color, 
     presence: true,
-    format: { with: /\A#((0|f){3}|[[:xdigit:]]{6})\z/i, }
+    format: { with: /\A#[[:xdigit:]]{6}\z/i, }
 
   before_validation :downcase_nickname
 

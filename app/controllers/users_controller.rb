@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :set_user, only: %i[edit show update destroy]
   before_action :authorize_user, only: %i[edit update destroy]
 
