@@ -46,6 +46,7 @@ body {
 }
 
 .link {
+  display: inline-block;
   color: darkred;
 }
 
