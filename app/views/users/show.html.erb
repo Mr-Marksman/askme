@@ -17,6 +17,15 @@
 
 <%= render "questions/form", question: @question %>
 
-<% @user.questions.order(created_at: :asc).each do |question| %>
-  <%= render "questions/question_from_list", question: question %>
+<% if @user.questions.empty? %>
+  <% if @user == current_user %>
+    <p class="center">This user has not been asked questions yet. Be the first!You haven't been asked yet. Try asking someone yourself!</p>
+  <% else %>
+    <p class="center">This user has not been asked questions yet. Be the first!</p>
+  <% end %>
+
+<% else %>
+  <% @user.questions.order(created_at: :asc).each do |question| %>
+    <%= render "questions/question_from_list", question: question %>
+  <% end %>
 <% end %>
