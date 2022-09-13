@@ -12,10 +12,12 @@
         <% if question.topic.present? %>
           <%= question.topic&.truncate(80, separator: " ") %>
         <% else %>
-          "Question without topic (old version):
-          <%= splited_text(question.body.truncate(60, separator: " ")).each do |line| %>
-            <%= line %><br>
-          <% end %>
+          <p>"Question without topic (old version):</p>
+          <p>
+            <% splited_text(question.body.truncate(60, separator: " ")).each do |line| %>
+              <%= line %><br>
+            <% end %>
+          </p>
         <% end %>
       </p>
     </div>
