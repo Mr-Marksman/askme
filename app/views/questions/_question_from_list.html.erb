@@ -10,7 +10,7 @@
     <div class="question_text">
       <p>
         <% if question.topic.present? %>
-          <%= question.topic&.truncate(80, separator: " ") %>
+          <%= text_with_hashtags(question.topic)&.truncate(80, separator: " ") %>
         <% else %>
           <p>"Question without topic (old version):</p>
           <p>

@@ -1,11 +1,11 @@
 <div class="container mb-sm">
   <p>
     <p class="title-sm mb-sm">
-        <%=  question.topic || "Question without topic (old version)" %>
+        <%=  text_with_hashtags(question.topic) || "Question without topic (old version)" %>
     </p>
     
     <% splited_text(question.body).each do |line| %>
-      <%= line %><br>
+      <%= text_with_hashtags(line) %><br>
     <% end %>
   </p>
 
@@ -24,7 +24,7 @@
   <div class="container mb-sm">
     <p><p class="title-sm mb-sm">Answer:</p>
       <% splited_text(question.answer).each do |line| %>
-        <%= line %><br>
+        <%= text_with_hashtags(line) %><br>
       <% end %>
     </p>
   </div>

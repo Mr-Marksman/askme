@@ -1,0 +1,2 @@
+class QuestionHashtagsController < ApplicationController
+end

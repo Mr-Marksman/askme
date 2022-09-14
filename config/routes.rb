@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hashtags, only: [:show], param: :body
   
   resources :questions do
     put :hidden, on: :member, to: "questions#hide"

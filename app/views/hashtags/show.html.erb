@@ -1,0 +1,8 @@
+<div>
+  <h2 class="title mb-lg mt-lg centered label">Questions with hashtag <%= @hashtag.body %></h2>
+  <div>
+    <% @hashtag.questions.each do |question| %>
+      <%= render "questions/question_from_list", question: question %>
+    <% end %>
+  </div>
+</div>
