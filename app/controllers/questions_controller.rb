@@ -41,7 +41,8 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.order(created_at: :desc)
-    @users = User.order(created_at: :desc)  
+    @users = User.order(created_at: :desc)
+    @hashtags = Hashtag.where_exists(:questions)
   end
 
   def new

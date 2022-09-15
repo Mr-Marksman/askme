@@ -1,5 +1,5 @@
 <div>
-  <h2 class="title mb-lg mt-lg centered label">Questions with hashtag <%= @hashtag.body %></h2>
+  <h2 class="title mb-lg mt-lg centered label">Questions with hashtag <%= display_tag(@hashtag.body) %></h2>
   <div>
     <% @hashtag.questions.uniq.each do |question| %>
       <%= render "questions/question_from_list", question: question %>

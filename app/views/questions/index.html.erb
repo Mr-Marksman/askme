@@ -12,8 +12,8 @@
 <div>
   <h2 class="title mb-lg mt-lg centered label">All hashtags</h2>
   <div class="container">
-    <% Hashtag.all.each do |hashtag| %>
-      <%= link_to hashtag.body, hashtag_path(hashtag.body) %>
+    <% @hashtags.each do |hashtag| %>
+      <%= link_to display_tag(hashtag.body), hashtag_path(hashtag.body) %>
     <% end %>
   </div>
 </div>
