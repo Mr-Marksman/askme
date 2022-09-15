@@ -21,7 +21,7 @@
     <%= l(question.created_at, format: :short) %>
     <p class="ml-sm">
       <small>
-        <% question.question_hashtags.each do |hashtag| %>
+        <% question.question_hashtags.uniq.each do |hashtag| %>
           <%= link_to display_tag(hashtag.body), hashtag_path(hashtag.body) %>
         <% end %>
       </small>
