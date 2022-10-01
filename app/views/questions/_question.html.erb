@@ -4,7 +4,7 @@
         <%=  question.topic || "Question without topic (old version)" %>
     </p>
     
-    <% splited_text(question.body).each do |line| %>
+    <% question.body.lines.each do |line| %>
       <%= line %><br>
     <% end %>
   </p>
@@ -32,7 +32,7 @@
 <% if question.answer.present? %>
   <div class="container mb-sm">
     <p><p class="title-sm mb-sm">Answer:</p>
-      <% splited_text(question.answer).each do |line| %>
+      <% question.answer.lines.each do |line| %>
         <%= line %><br>
       <% end %>
     </p>
@@ -48,7 +48,7 @@
     <%= button_to "Delete question", question_path(question), class: "button lf mr", method: :delete,
     title: "Delete question", form: {data: {turbo_confirm: "Do you want delete the question?"}} %>
 
-    <% unless question.hidden? %>
+    <% unless question.hidden %>
       <%= button_to "Hide question", hidden_question_path, class: "button lf mr", method: :put,
       title: "Hide question" %>
     <% end %>
